@@ -1,0 +1,10 @@
+Place your blog images in this directory:
+
+1. ai-security.jpg - An image representing AI and cybersecurity
+2. ml-breakthroughs.jpg - An image showing machine learning concepts
+3. neural-networks.jpg - A visualization of neural networks
+
+Authors directory:
+/authors/john.jpg - Profile picture for John Smith
+/authors/sarah.jpg - Profile picture for Sarah Johnson
+/authors/mike.jpg - Profile picture for Mike Chen

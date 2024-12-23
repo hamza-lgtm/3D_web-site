@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --cursor-color: rgba(0, 247, 255, 0.5);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  background: var(--cursor-color);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  transition: width 0.2s, height 0.2s, background 0.2s;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 15px var(--cursor-color),
+              0 0 30px var(--cursor-color),
+              0 0 45px var(--cursor-color);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--cursor-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  filter: blur(1px);
+}
+
+/* Hover effects */
+.custom-cursor.hover {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 247, 255, 0.8);
+  mix-blend-mode: screen;
+  transition: all 0.2s ease;
+}
+
+.custom-cursor.click {
+  width: 10px;
+  height: 10px;
+  transition: all 0.1s ease;
+}
+
+/* Button hover effect */
+button:hover ~ .custom-cursor {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 247, 255, 0.3);
+  mix-blend-mode: screen;
+  backdrop-filter: blur(4px);
+}
